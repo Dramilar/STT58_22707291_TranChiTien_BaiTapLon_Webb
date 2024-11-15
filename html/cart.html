@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="header navbar navbar-expand-md">
+            <div class="container-xl">
+                <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <form class="header__searchPhoneForm d-flex d-md-none" id="headerSearchBox" role="search">
+                    <input class="form-control" type="search" placeholder="Nhập từ khoá" aria-label="Search">
+                    <div class="header__searchPhoneForm__button">
+                        <button type="submit" id="searchPhoneButton"><img src="../assets/imgs/searchIcon.png"
+                                width="40"></button>
+                    </div>
+                </form>
+
+                <div class="header__cartPhoneWrapper d-md-none">
+                    <img src="../assets/imgs/cartPhone.svg" alt="" width="53" height="38">
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                    <a href="home.html" class="navbar-brand d-none d-md-flex me-xl-5 me-lg-0"><img
+                            src="../assets/imgs/Logo_orginal.png" width="80"></a>
+                    <ul class="header__navBar navbar-nav">
+                        <li id="home" class="nav-item mx-md-1 mx-lg-4">
+                            <a href="home.html" class="nav-link">Trang chủ</a>
+                        </li>
+                        <li id="about" class="nav-item mx-md-1 mx-lg-4">
+                            <a href="about.html" class="nav-link">Giới thiệu</a>
+                        </li>
+                        <li id="product" class="nav-item mx-md-1 mx-lg-4">
+                            <a href="product.html" class="nav-link">Sản phẩm</a>
+                        </li>
+                        <li id="member" class="nav-item mx-md-1 mx-lg-4"><a href="member.html" class="nav-link">Thành
+                                viên</a></li>
+                       <li id="contact" class="nav-item mx-md-1 mx-lg-4"><a href="contact.html" class="nav-link">Liên
+                                hệ</a></li>
+                        <li id="account" class="nav-item mx-md-1 mx-lg-4 d-block d-md-none"><a href="login.html" class="nav-link">Tài
+                                khoản</a></li>
+                    </ul>
+                    <div class="header__iconBox d-none d-md-flex ms-lg-4 ms-md-0">
+                        <img id="searchButton" src="../assets/imgs/searchIcon.png" class="mx-md-0 mx-lg-2">
+                        <div class="header__iconBox__searchBox">
+                            <form action="" id="headerSearchBox2">
+                                <input class="header__iconBox__searchBox__left" type="text" placeholder="Nhập từ khoá">
+                                <div class="header__iconBox__searchBox__right"><img src="../assets/imgs/searchIcon.png"
+                                        alt="" width="80%" height="80%"></div>
+                            </form>
+                        </div>
+                        <div class="cartWrapper d-flex position-relative mx-md-0 mx-lg-2">
+                            <img id="cartButton" src="../assets/imgs/cartIcon.png">
+                            <span class="header__iconBox__cartCount">0</span>
+                        </div>
+
+                        <img id="userButton" src="../assets/imgs/userIcon.png" class="mx-md-0 mx-lg-2">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="main__cartDetail container-fluid d-flex justify-content-center">
+                <div class="main__cartDetail__shippingDetails m-4">
+                    <span>Thông Tin Giao Hàng</span>
+                    <form action="" id="shippingForm" class="my-4">
+                        <input type="text" class="form-control mt-3" name="name" id="name" placeholder="Họ và tên:" required>
+                        <input type="text" class="form-control mt-3" name="phone" id="phone"
+                            placeholder="Số điện thoại:" required>
+                        <input type="text" class="form-control mt-3 my-4" name="email" id="email" placeholder="Email:" required>
+                        <span>Địa Chỉ Giao Hàng</span>
+                        <input type="text" class="form-control mt-3" name="city" id="city" placeholder="Thành phố:" aria-required="true">
+                        <input type="text" class="form-control mt-3" name="district" id="district"
+                            placeholder="Quận / Huyện:" required>
+                        <input type="text" class="form-control mt-3" name="phuong" id="phuong"
+                            placeholder="Phường / Xã:" required>
+                        <input type="text" class="form-control mt-3" name="address" id="address" placeholder="Địa chỉ cụ thể:" required>
+                        <textarea class="form-control mt-3" name="" id="note" rows="8" placeholder="Note:" aria-required="true"></textarea>
+                        <div id="buttonWrapper">
+                            <button type="submit" id="payButton">THANH TOÁN NGAY</button>
+                            <a id="continueButton">TIẾP TỤC MUA</a>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="main__cartDetail__cartProduct m-4">
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <th colspan="2">Sản Phẩm</th>
+                                <th>Đơn Giá</th>
+                                <th colspan="2">Thành Tiền</th>
+                            </tr>
+
+                        </thead>
+                        <tbody class="mt-5" id="cartBody">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="footer">
+            <div class="footer__main container-xxl d-flex justify-content-md-center">
+                <div class="footer__main__logoWrapper mt-1">
+                    <img src="../assets/imgs/Logo_orginal.png" alt="" width="200px" height="200px">
+                    <p class="footer__main__logoWrapper__slogan" style="width: 212px;
+                    color: #ffc1a6;
+                    text-align: center;
+                    font-family: Oregano;
+                    font-size: 35px;
+                    font-weight: 400;
+                    line-height: normal;">T1 Dracular "unveil the enigma of beauty”</p>
+                </div>
+
+                <div class="footer__main__support m-5">
+                    <h1>HỖ TRỢ</h1>
+                    <p>Giao Hàng Tận Nơi</p>
+                    <p>Hướng Dẫn Mua hàng</p>
+                    <p>Phương Thức Thanh Toán</p>
+                    <p>Phương Thức Giao Hàng</p>
+                </div>
+
+                <div class="footer__main__registerInfo m-5">
+                    <h1>ĐĂNG KÝ NHẬN THÔNG TIN</h1>
+                    <form action="">
+                        <img src="../assets/imgs/iconMail.svg" width="18">
+                        <input type="text" class="mx-3" emailInfo" id="emailInfo" placeholder="Nhập email đăng ký">
+                        <button type="submit">Gửi</button>
+                    </form>
+                    <div class="footer__main__registerInfo__iconWrapper">
+                        <a href="https://www.facebook.com/profile.php?id=100082471595758"><img src="../assets/imgs/iconFacebook.svg" alt=""></a>
+                        <a href="https://www.youtube.com/watch?v=EWGCmgRYwZo"><img src="../assets/imgs/iconYoutube.svg" alt=""></a>
+                        <a href="https://www.youtube.com/watch?v=EWGCmgRYwZo"><img src="../assets/imgs/iconInstagram.svg" alt=""></a>
+                        <a href="https://www.youtube.com/watch?v=EWGCmgRYwZo"><img src="../assets/imgs/iconTelegram.svg" alt=""></a>
+                    </div>
+                </div>
+
+                <div class="footer__main__contactInfo m-5">
+                    <h1>CƠ SỞ SẢN XUẤT</h1>
+                    <p>Trụ sở: 14 Nguyễn Văn Bảo - Phường 4 - Gò Vấp - TP.HCM</p>
+                    <p>Hotline: (123) 456 789 - sv.iuh.edu.vn</p>
+                    <p>Giấy phép kinh doanh số 27B062005, Thành phố Hồ Chí Minh</p>
+                </div>
+
+                <div class="footer__main__workingHour m-5">
+                    <h1>GIỜ LÀM VIỆC</h1>
+                    <p>Từ Thứ 2 - Thứ 6: 7h - 22h</p>
+                    <p>Thứ 7 - Chủ nhật: 7h - 20h</p>
+                </div>
+
+                <div class="footer__main__bct m-5"><img src="../assets/imgs/bct.png" alt=""></div>
+                <div class="footer__main__line"></div>
+                <h1 class="my-3">Copyright © 2024 T1 Dracular. All Rights Reserved.</h1>
+            </div>
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+
+</html>
